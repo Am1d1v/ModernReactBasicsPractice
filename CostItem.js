@@ -17,15 +17,18 @@ function CostItem(){
         minute: 'numeric',
       };
 
+    const costDescription = 'Order List Item';
+    const costAmount = 1000;
+
     return(
         <div className='cost-item'>
             <div>
                 {date.toLocaleString("ru", options)}
             </div>
             <div className='cost-item__description'>
-                <h2>Title</h2>
+                <h2>{costDescription}</h2>
                 <div className='cost-item__price'> 
-                1000$
+                {`${costAmount}$`}
             </div>
             </div>
         </div>
