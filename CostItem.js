@@ -1,4 +1,5 @@
 import './CostItem.css'
+import CostDate from './CostDate';
 
 function CostItem(props){
 
@@ -25,11 +26,7 @@ function CostItem(props){
 
     return(
         <div className='cost-item'>
-            <div>
-                <div>{date.toLocaleString("eng", {month: 'long'})}</div>
-                <div>{date.toLocaleString("eng", {year: 'numeric'})}</div>
-                <div>{date.toLocaleString("eng", {day: 'numeric'})}</div>
-            </div>
+            <CostDate date={date}/>
             <div className='cost-item__description'>
                 <h2>{description}</h2>
                 <div className='cost-item__price'> 
