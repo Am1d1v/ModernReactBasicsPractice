@@ -9,7 +9,7 @@ function CostItem(props){
 
     const {date, description, amount} = props;
 
-    const options = {
+   /*  const options = {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
@@ -17,15 +17,18 @@ function CostItem(props){
         timezone: 'UTC',
         hour: 'numeric',
         minute: 'numeric',
-      };
+      }; */
 
     // const costDescription = 'Order List Item';
     // const costAmount = 1000;
+    //{date.toLocaleString("eng", options)}
 
     return(
         <div className='cost-item'>
             <div>
-                {date.toLocaleString("eng", options)}
+                <div>{date.toLocaleString("eng", {month: 'long'})}</div>
+                <div>{date.toLocaleString("eng", {year: 'numeric'})}</div>
+                <div>{date.toLocaleString("eng", {day: 'numeric'})}</div>
             </div>
             <div className='cost-item__description'>
                 <h2>{description}</h2>
