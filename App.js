@@ -1,4 +1,5 @@
-import CostItem from './components/CostItem';
+
+import Costs from './components/Costs';
 import './App.css';
 
 function App() {
@@ -25,9 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <CostItem date={costs[0].date} description={costs[0].costDescription} amount={costs[0].costAmount} />
-      <CostItem date={costs[1].date} description={costs[1].costDescription} amount={costs[1].costAmount} />
-      <CostItem date={costs[2].date} description={costs[2].costDescription} amount={costs[2].costAmount} />
+      <Costs costs={costs}/>
     </div>
   );
 }
