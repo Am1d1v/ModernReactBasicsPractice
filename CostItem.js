@@ -25,6 +25,11 @@ function CostItem(props){
     // const costAmount = 1000;
     //{date.toLocaleString("eng", options)}
 
+    const changeDescription = () => {
+        console.log('Click');
+    }
+
+
     return(
         <Card className='cost-item'>
             <CostDate date={date}/>
@@ -34,6 +39,7 @@ function CostItem(props){
                 {`${amount}$`}
             </div>
             </div>
+            <button onClick={changeDescription}>Change Description</button>
         </Card>
     )
 }
