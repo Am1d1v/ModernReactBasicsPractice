@@ -1,5 +1,6 @@
 import './CostItem.css'
 import CostDate from './CostDate';
+import Card from './Card';
 
 function CostItem(props){
 
@@ -25,7 +26,7 @@ function CostItem(props){
     //{date.toLocaleString("eng", options)}
 
     return(
-        <div className='cost-item'>
+        <Card className='cost-item'>
             <CostDate date={date}/>
             <div className='cost-item__description'>
                 <h2>{description}</h2>
@@ -33,7 +34,7 @@ function CostItem(props){
                 {`${amount}$`}
             </div>
             </div>
-        </div>
+        </Card>
     )
 }
 export default CostItem;
