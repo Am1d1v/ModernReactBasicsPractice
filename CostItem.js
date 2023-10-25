@@ -1,6 +1,7 @@
 import './CostItem.css'
 import CostDate from './CostDate';
 import Card from './Card';
+import { useState } from 'react';
 
 function CostItem(props){
 
@@ -25,16 +26,17 @@ function CostItem(props){
     // const costAmount = 1000;
     //{date.toLocaleString("eng", options)}
 
-    const changeDescription = () => {
-        console.log('Click');
-    }
+      const [descr, setDescrtiption] = useState(description);
 
+      const changeDescription = () => {
+        setDescrtiption('New Item Text')
+      }
 
     return(
         <Card className='cost-item'>
             <CostDate date={date}/>
             <div className='cost-item__description'>
-                <h2>{description}</h2>
+                <h2>{descr}</h2>
                 <div className='cost-item__price'> 
                 {`${amount}$`}
             </div>
