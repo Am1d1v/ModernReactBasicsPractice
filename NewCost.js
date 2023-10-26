@@ -1,12 +1,20 @@
 import CostForm from "./CostForm";
-import './CostForm.css'
-
+import './NewCost.css'
 
 const NewCost = () => {
 
+    const SaveConstDateHandler = (inputCostData) => {
+        
+        const costData = {
+            ...inputCostData,
+            id: Math.random().toString()
+        }
+        console.log(costData)
+    }
+
     return(
         <div className="new-cost">
-            <CostForm />
+            <CostForm onSaveCostData={SaveConstDateHandler} />
         </div>
     )
 }
