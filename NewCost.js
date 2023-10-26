@@ -13,6 +13,8 @@ const NewCost = (props) => {
         }
         //console.log(costData)
 
+        // Push costData values to parent component
+
         onAddNewCost(costData);
     }
 

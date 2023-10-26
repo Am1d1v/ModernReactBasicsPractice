@@ -60,6 +60,7 @@ const CostForm = (props) => {
             date: new Date(date)
         }
 
+        // Push costData values to parent component
         onSaveCostData(costData);
 
         //console.log(costData);
