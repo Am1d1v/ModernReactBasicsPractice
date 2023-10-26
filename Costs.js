@@ -5,7 +5,6 @@ import Card from "./Card";
 function Costs(props){
 
     const {costs} = props;
-
     
     return(
         <Card className="costs">
