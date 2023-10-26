@@ -3,39 +3,67 @@ import './NewCost.css'
 
 const CostForm = () => {
 
-    const [name, setName] = useState('');
-    const [amount, setAmount] = useState('');
-    const [date, setDate] = useState('');
+    // const [name, setName] = useState('');
+    // const [amount, setAmount] = useState('');
+    // const [date, setDate] = useState('');
 
+    const [userInput, setUsetInput] =  useState({
+        name: '',
+        amount: '',
+        date: ''
+    });
 
-    const nameChangeHandler = (event) => {
-        setName(event.target.value);
+    const nameInputChangeHandler = (event) => {
+        setUsetInput({
+            ...userInput,
+            name: event.target.value,
+        })
     }
 
-    const amountChangeHandler = (event) => {
-        setAmount(event.target.value);
+    const amountInputChangeHandler = (event) => {
+        setUsetInput({
+            ...userInput,
+            amount: event.target.value,
+        })
     }
 
-    const dateChangeHandler = (event) => {
-        setDate(event.target.value);
+    const dateInputChangeHandler = (event) => {
+        setUsetInput({
+            ...userInput,
+            date: event.target.value,
+        })
     }
+
+
+
+    // const nameChangeHandler = (event) => {
+    //     setName(event.target.value);
+    // }
+
+    // const amountChangeHandler = (event) => {
+    //     setAmount(event.target.value);
+    // }
+
+    // const dateChangeHandler = (event) => {
+    //     setDate(event.target.value);
+    // }
 
     return(
         <form>
             <div className="new-cost__controls">
                 <div className="new-cost__control">
                     <label>Название</label>
-                    <input type="text" onChange={nameChangeHandler} />
+                    <input type="text" onChange={nameInputChangeHandler} />
                 </div>
 
                 <div className="new-cost__control">
                     <label>Сумма</label>
-                    <input type="number" min='0.01' step='0.01' onChange={amountChangeHandler}/>
+                    <input type="number" min='0.01' step='0.01' onChange={amountInputChangeHandler}/>
                 </div>
 
                 <div className="new-cost__control">
                     <label>Дата</label>
-                    <input type="date" min={'26-10-2023'} step='0.01' onChange={dateChangeHandler}/>
+                    <input type="date" min={'26-10-2023'} step='0.01' onChange={dateInputChangeHandler}/>
                 </div>
 
                 <div className="new-cost__actions">
