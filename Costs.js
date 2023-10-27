@@ -8,10 +8,9 @@ function Costs(props){
 
     const {costs} = props;
     const date = new Date();
-    const month = date.getFullYear();
+    const year = date.getFullYear();
 
-
-    const [selectedYear, setSelectedYear] = useState(month);
+    const [selectedYear, setSelectedYear] = useState(year);
     
     const yearChangeHandler = (year) => {
 
@@ -19,13 +18,17 @@ function Costs(props){
         setSelectedYear(year)
     }
 
+    // Filter Costs by selected year
+    const filteredCosts = costs.filter( cost => {
+        return cost.date.getFullYear().toString() === selectedYear;
+    })
     
     // Return dynamic CostItem elements
     return(
         <div>
             <Card className="costs">
-                <CostsFilter onChangeYear={yearChangeHandler} defaultYear={selectedYear}/>
-                {costs.map((cost, index) => {
+                <CostsFilter onChangeYear={yearChangeHandler} defaultYear={year} selectedYear={selectedYear}/>
+                {filteredCosts.map((cost, index) => {
                    return <CostItem date={cost.date} description={cost.costDescription} amount={cost.costAmount} key={index}/> 
                 })} 
             </Card>

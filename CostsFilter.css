@@ -14,6 +14,7 @@
 .costs-filter label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-size: 25px
 }
 
 .costs-filter select {
