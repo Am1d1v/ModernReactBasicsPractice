@@ -20,14 +20,14 @@ function Costs(props){
     }
 
     
-
+    // Return dynamic CostItem elements
     return(
         <div>
             <Card className="costs">
                 <CostsFilter onChangeYear={yearChangeHandler} defaultYear={selectedYear}/>
-                <CostItem date={costs[0].date} description={costs[0].costDescription} amount={costs[0].costAmount} />
-                <CostItem date={costs[1].date} description={costs[1].costDescription} amount={costs[1].costAmount} />
-                <CostItem date={costs[2].date} description={costs[2].costDescription} amount={costs[2].costAmount} /> 
+                {costs.map((item, i) => {
+                   return <CostItem date={costs[i].date} description={costs[i].costDescription} amount={costs[i].costAmount} key={i}/> 
+                })} 
             </Card>
         </div>
     )
