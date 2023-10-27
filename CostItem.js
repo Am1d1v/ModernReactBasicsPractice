@@ -36,7 +36,7 @@ function CostItem(props){
         <Card className='cost-item'>
             <CostDate date={date}/>
             <div className='cost-item__description'>
-                <h2>{descr}</h2>
+                <h2>{description}</h2>
                 <div className='cost-item__price'> 
                 {`${amount}$`}
             </div>

@@ -9,7 +9,7 @@ const NewCost = (props) => {
         
         const costData = {
             ...inputCostData,
-            id: Math.random().toString()
+            //id: Math.random().toString()
         }
         //console.log(costData)
 
