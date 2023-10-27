@@ -25,8 +25,8 @@ function Costs(props){
         <div>
             <Card className="costs">
                 <CostsFilter onChangeYear={yearChangeHandler} defaultYear={selectedYear}/>
-                {costs.map((cost) => {
-                   return <CostItem date={cost.date} description={cost.costDescription} amount={cost.costAmount}/> 
+                {costs.map((cost, index) => {
+                   return <CostItem date={cost.date} description={cost.costDescription} amount={cost.costAmount} key={index}/> 
                 })} 
             </Card>
         </div>
