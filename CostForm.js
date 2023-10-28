@@ -70,6 +70,12 @@ const CostForm = (props) => {
 
     }
 
+    const clearInputFields = () => {
+        setName('');
+        setAmount('');
+        setDate('');
+    }
+
     return(
         <form onSubmit={submitHandler}>
             <div className="new-cost__controls">
@@ -90,6 +96,10 @@ const CostForm = (props) => {
 
                 <div className="new-cost__actions">
                     <button type="submit">Добавить Расход</button>
+                </div>
+
+                <div className="new-cost__actions">
+                    <button onClick={clearInputFields}>Отмены</button>
                 </div>
 
             </div>
