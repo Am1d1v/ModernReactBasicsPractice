@@ -3,7 +3,7 @@ import './CostForm.css'
 
 const CostForm = (props) => {
 
-    const {onSaveCostData} = props;
+    const {onSaveCostData, onCancel} = props;
 
     const [name, setName] = useState('');
     const [amount, setAmount] = useState('');
@@ -99,7 +99,7 @@ const CostForm = (props) => {
                 </div>
 
                 <div className="new-cost__actions">
-                    <button onClick={clearInputFields}>Отмены</button>
+                    <button onClick={onCancel}>Отмена</button>
                 </div>
 
             </div>
